@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Art_Gallery.Models.art>
+
+@{
+    ViewData["Title"] = "ArtList";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Art Gallery</h1>
+    </div>
+<br/>
+<br/>
+
+<div class="row">
+    @foreach (var art in Model)
+    {
+
+            <div id="ArtContainer" class="col-lg-3 col-md-4 col-sm-1">
+                <img id="ArtImage" style="width: 100%; height: 100%;" src="@art.URL" alt="@art.ID" />
+                <span id="Title">@art.ID</span>
+                <center>
+             
+                <span id="Quantity"><input id="quantityInput" type="number" name="Quantity" value="" placeholder="0" /></span>
+                <br/>
+                <span id="CartButton"><button id="btn"><span class="fa fa-shopping-cart"></span>Add to Cart</button></span>
+           </center>
+           </div>
+    }
+</div>
