@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Art_Gallery.Models;
 
 namespace Art_Gallery.Data
 {
@@ -12,5 +13,6 @@ namespace Art_Gallery.Data
             : base(options)
         {
         }
+        public DbSet<Art_Gallery.Models.art> art { get; set; }
     }
 }

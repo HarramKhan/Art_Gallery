@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Art_Gallery.Models.art>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+@foreach (var item in Model) {
+    
+         <div id="ArtContainer" class="col-lg-3 col-md-4 col-sm-1">
+        <span id="name"> @Html.DisplayFor(modelItem => item.name)</span>
+        <img id="Artimage" style="height :100%; width:100%;" src="@Url.Content(item.URL)" />
+         </div>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        
+     
+}
