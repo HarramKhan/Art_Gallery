@@ -25,6 +25,8 @@
          <div id="ArtContainer" class="col-lg-3 col-md-4 col-sm-1">
         <span id="name"> @Html.DisplayFor(modelItem => item.name)</span>
         <img id="Artimage" style="height :100%; width:100%;" src="@Url.Content(item.URL)" />
+         <span id="name"> @Html.DisplayFor(modelItem => item.price)</span>
+
          </div>
      
         @if (SignInManager.IsSignedIn(User))

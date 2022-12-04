@@ -14,5 +14,7 @@ namespace Art_Gallery.Data
         {
         }
         public DbSet<Art_Gallery.Models.art> art { get; set; }
+        public DbSet<Art_Gallery.Models.art> Artist { get; set; }
+
     }
 }

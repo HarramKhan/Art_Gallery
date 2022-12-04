@@ -73,7 +73,7 @@ namespace Art_Gallery.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Create([Bind("ID,name,URL")] art art)
+        public async Task<IActionResult> Create([Bind("ID,name,URL,price")] art art)
         {
             if (ModelState.IsValid)
             {
@@ -107,7 +107,7 @@ namespace Art_Gallery.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,name,URL")] art art)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,name,URL,price")] art art)
         {
             if (id != art.ID)
             {
