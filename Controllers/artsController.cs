@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Art_Gallery.Data;
 using Art_Gallery.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Art_Gallery.Controllers
 {
@@ -60,6 +61,7 @@ namespace Art_Gallery.Controllers
         }
 
         // GET: arts/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
@@ -70,6 +72,7 @@ namespace Art_Gallery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Create([Bind("ID,name,URL")] art art)
         {
             if (ModelState.IsValid)
@@ -82,6 +85,7 @@ namespace Art_Gallery.Controllers
         }
 
         // GET: arts/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -102,6 +106,7 @@ namespace Art_Gallery.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
         public async Task<IActionResult> Edit(int id, [Bind("ID,name,URL")] art art)
         {
             if (id != art.ID)
@@ -133,6 +138,7 @@ namespace Art_Gallery.Controllers
         }
 
         // GET: arts/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
